@@ -38,8 +38,17 @@ public class Main {
 
         int j = 0;
         for (int i = 0;i < index.size();i++){
-            while (j <= index.get(i)){
-                System.out.print(words.get(j) + " ");
+            if (spaces.get(i) != 0) {
+                while (j <= index.get(i)) {
+                    System.out.print(words.get(j) + " ");
+                    j++;
+                }
+            }else {
+                while (j < index.get(i)) {
+                    System.out.print(words.get(j) + " ");
+                    j++;
+                }
+                System.out.print(words.get(j));
                 j++;
             }
             for (int k = 0;k < spaces.get(i);k++){
