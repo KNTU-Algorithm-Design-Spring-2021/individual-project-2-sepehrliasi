@@ -16,6 +16,7 @@ public class Main {
         answer[0] = 0;
 
         ArrayList<Integer> index = new ArrayList<>();
+        ArrayList<Integer> spaces = new ArrayList<>();
 
         int lastLineLength = words.get(0).length();
 
@@ -27,14 +28,24 @@ public class Main {
             else {
                 answer[i] = answer[i-1] + (int) Math.pow(m-lastLineLength,3);
                 index.add(i-1);
+                spaces.add(m-lastLineLength);
                 lastLineLength = words.get(i).length();
             }
         }
+        index.add(n-1);
+        spaces.add(m-lastLineLength);
         System.out.println("minimum cost: " + answer[n-1]);
 
-//        int j = 0;
-//        for (int i = 0;i < index.size();i++){
-//            if (j <= index.get(i))
-//        }
+        int j = 0;
+        for (int i = 0;i < index.size();i++){
+            while (j <= index.get(i)){
+                System.out.print(words.get(j) + " ");
+                j++;
+            }
+            for (int k = 0;k < spaces.get(i);k++){
+                System.out.print(" ");
+            }
+            System.out.println("|");
+        }
     }
 }
