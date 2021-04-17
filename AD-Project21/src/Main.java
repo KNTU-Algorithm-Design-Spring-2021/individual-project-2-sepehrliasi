@@ -6,6 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();//number of words
         int m = scanner.nextInt();//line size
+        scanner.nextLine();
         ArrayList<String> words = new ArrayList<>();
 
         for (int i = 0;i < n;i++){
@@ -51,7 +52,7 @@ public class Main {
                 System.out.print(words.get(j));
                 j++;
             }
-            for (int k = 0;k < spaces.get(i);k++){
+            for (int k = 0;k < spaces.get(i)-1;k++){
                 System.out.print(" ");
             }
             System.out.println("|");
